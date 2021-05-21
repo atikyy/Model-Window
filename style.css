@@ -1,0 +1,139 @@
+* {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(79, 70, 90);
+  position: relative;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+button {
+  background-color: rgb(98, 98, 218);
+  border: none;
+  font-size: 3rem;
+  border-radius: 20%;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0rem 0rem 2rem white, 0rem 0rem 5rem white;
+  cursor: pointer;
+  animation: glow2 1s alternate infinite ease-in-out;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background-color: rgb(71, 71, 145);
+}
+
+@keyframes glow2 {
+  from {
+    box-shadow: 0rem 0rem 1rem rgb(98, 44, 148);
+  }
+  to {
+    box-shadow: 0rem 0rem 3rem rgb(98, 98, 218);
+  }
+}
+
+.btno1,
+.btno2,
+.btno3 {
+  align-self: center;
+  min-width: 4rem;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.window {
+  background-color: rgb(214, 201, 230);
+  font-size: calc(1.4rem + 1vw);
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  animation: scaleup 0.3s ease-out;
+  z-index: 1;
+  border: none;
+}
+
+.window p {
+  margin: 2rem;
+}
+
+.window h1 {
+  margin: 2rem;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: black;
+  margin: 0rem;
+  padding: 0rem;
+  font-size: calc(1.4rem + 1vw);
+  animation: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlaydark {
+  background-color: rgba(0, 0, 0, 0.541);
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  height: 100%;
+  width: 100%;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.scaleup {
+  animation: scaleup 0.3s ease-out;
+}
+
+@keyframes scaleup {
+  0% {
+    transform: scale(0) translate(50%, -50%);
+    transform-origin: right;
+  }
+  60% {
+    transform: scale(1.1) translate(50%, -50%);
+    transform-origin: right;
+  }
+  100% {
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: right;
+  }
+}
+
+@media (max-width: 550px) {
+  main {
+    flex-direction: column;
+  }
+}
